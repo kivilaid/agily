@@ -68,16 +68,16 @@
 					<Marquee
 						duration={5000}
 						words={[
-							$i18n.t('Explore the cosmos'),
-							$i18n.t('Unlock mysteries'),
-							$i18n.t('Chart new frontiers'),
-							$i18n.t('Dive into knowledge'),
-							$i18n.t('Discover wonders'),
-							$i18n.t('Ignite curiosity'),
-							$i18n.t('Forge new paths'),
-							$i18n.t('Unravel secrets'),
-							$i18n.t('Pioneer insights'),
-							$i18n.t('Embark on adventures')
+							$i18n.t('Challenge AI perspectives'),
+							$i18n.t('Shape the future of AI'),
+							$i18n.t('Join the AI conversation'),
+							$i18n.t('Debate with intelligence'),
+							$i18n.t('Explore AI frontiers'),
+							$i18n.t('Question. Discuss. Evolve.'),
+							$i18n.t('Your voice in AI matters'),
+							$i18n.t('Think beyond AI limits'),
+							$i18n.t('Where AI meets human insight'),
+							$i18n.t('Be part of AI evolution')
 						]}
 					/>
 
