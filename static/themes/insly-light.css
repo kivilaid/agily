@@ -1,0 +1,202 @@
+.insly-light * {
+	color: #575279 !important;
+	stroke: #FF7A59 !important;
+}
+
+.insly-light .app > * {
+	background-color: #FFFFFF !important;
+}
+
+.insly-light #nav {
+	background-color: #F8F8F8;
+}
+
+.insly-light .py-2\.5.my-auto.flex.flex-col.justify-between.h-screen {
+	background: #F2F2F2;
+}
+
+.insly-light .bg-white.dark\:bg-gray-800 {
+	background: #FFFFFF;
+}
+
+.insly-light .w-4.h-4 {
+	fill: #FF7A59;
+}
+
+.insly-light #chat-input {
+	background: #F7F7F7;
+	margin: 0.3rem;
+	padding: 0.5rem;
+	border: 1px solid #E0E0E0;
+}
+
+.insly-light .bg-gradient-to-t.from-white.dark\:from-gray-800.from-40\%.pb-2 {
+	background: #FFFFFF !important;
+	padding-top: 0.6rem;
+}
+
+.insly-light
+	.text-white.bg-gray-100.dark\:text-gray-800.dark\:bg-gray-600.disabled.transition.rounded-lg.p-1.mr-0\.5.w-7.h-7.self-center {
+	background-color: #E0E0E0;
+	transition: background-color 0.2s ease-out linear;
+}
+
+.insly-light
+	.bg-black.text-white.hover\:bg-gray-900.dark\:bg-white.dark\:text-black.dark\:hover\:bg-gray-100.transition.rounded-lg.p-1.mr-0\.5.w-7.h-7.self-center {
+	background-color: #FF7A59;
+	transition: background-color 0.2s ease-out linear;
+}
+
+.insly-light
+	.bg-black.text-white.hover\:bg-gray-900.dark\:bg-white.dark\:text-black.dark\:hover\:bg-gray-100.transition.rounded-lg.p-1.mr-0\.5.w-7.h-7.self-center
+	> * {
+	fill: #FFFFFF !important;
+	transition: fill 0.2s ease-out linear;
+}
+
+.insly-light
+	.w-full.flex.justify-between.rounded-md.px-3.py-2.hover\:bg-gray-900.bg-gray-900.transition.whitespace-nowrap.text-ellipsis {
+	background-color: #ECECEC;
+	font-weight: bold;
+}
+
+.insly-light .hover\:bg-gray-900:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgb(240 240 240 / var(--tw-bg-opacity));
+}
+
+.insly-light .text-xs.text-gray-700.uppercase.bg-gray-50.dark\:bg-gray-700.dark\:text-gray-400 {
+	background-color: #F5F5F5;
+}
+
+.insly-light .scrollbar-hidden.relative.overflow-x-auto.whitespace-nowrap.svelte-3g4avz {
+	border-radius: 16px 16px 0 0;
+}
+
+.insly-light .base.enter.svelte-ug60r4 {
+	background-color: #F7F7F7;
+}
+
+.insly-light .message.svelte-1nauejd {
+	color: #575279 !important;
+}
+
+.insly-light #dropdownDots {
+	background-color: #F5F5F5;
+}
+
+.insly-light .flex.py-2\.5.px-3\.5.w-full.hover\:bg-gray-800.transition:hover {
+	background: #F0F0F0;
+}
+
+.insly-light .m-auto.rounded-xl.max-w-full.w-\[40rem\].mx-2.bg-gray-50.dark\:bg-gray-900.shadow-3xl {
+	background-color: #FFFFFF;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.insly-light
+	.w-full.rounded.p-4.text-sm.dark\:text-gray-300.dark\:bg-gray-800.outline-none.resize-none {
+	background-color: #F8F8F8;
+	border: 1px solid #E0E0E0;
+}
+
+.insly-light
+	.w-full.rounded.py-2.px-4.text-sm.dark\:text-gray-300.dark\:bg-gray-800.outline-none.svelte-1vx7r9s {
+	background-color: #F8F8F8;
+	border: 1px solid #E0E0E0;
+}
+
+.insly-light
+	.px-2\.5.py-2\.5.min-w-fit.rounded-lg.flex-1.md\:flex-none.flex.text-right.transition.bg-gray-200.dark\:bg-gray-700 {
+	background-color: #F0F0F0;
+}
+
+.insly-light
+	.px-2\.5.py-2\.5.min-w-fit.rounded-lg.flex-1.md\:flex-none.flex.text-right.transition.hover\:bg-gray-300.dark\:hover\:bg-gray-800:hover {
+	background-color: #E5E5E5;
+}
+
+.insly-light .px-4.py-2.bg-emerald-600.hover\:bg-emerald-700.text-gray-100.transition.rounded {
+	background-color: #FF7A59;
+}
+
+.insly-light #chat-search > * {
+	background-color: #F5F5F5 !important;
+}
+
+.insly-light .svelte-1ee93ns {
+	--primary: #FF7A59 !important;
+	--secondary: #F8F8F8 !important;
+}
+
+.insly-light .svelte-11kvm4p {
+	--primary: #FF7A59 !important;
+	--secondary: #FFFFFF !important;
+}
+
+/* Tables for the INSLY-inspired professional look */
+.insly-light table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.insly-light table th {
+	background-color: #F5F5F5;
+	color: #444444 !important;
+	font-weight: 600;
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid #E0E0E0;
+}
+
+.insly-light table td {
+	padding: 10px;
+	border-bottom: 1px solid #E0E0E0;
+}
+
+.insly-light table tr:hover {
+	background-color: #F8F8F8;
+}
+
+/* Button styling to match INSLY interface */
+.insly-light button.primary {
+	background-color: #FF7A59;
+	color: white !important;
+	border: none;
+	border-radius: 4px;
+	padding: 6px 12px;
+}
+
+.insly-light button.secondary {
+	background-color: #F0F0F0;
+	color: #444444 !important;
+	border: 1px solid #E0E0E0;
+	border-radius: 4px;
+	padding: 6px 12px;
+}
+
+/* Card-like elements to match INSLY interface */
+.insly-light .card {
+	background-color: #FFFFFF;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	padding: 16px;
+	margin-bottom: 16px;
+}
+
+/* Status indicators like in INSLY */
+.insly-light .status-created {
+	background-color: #F0F0F0;
+	color: #444444 !important;
+	border-radius: 20px;
+	padding: 4px 10px;
+	font-size: 12px;
+}
+
+.insly-light .status-underwritten {
+	background-color: #E5F7ED;
+	color: #0A6634 !important;
+	border-radius: 20px;
+	padding: 4px 10px;
+	font-size: 12px;
+}
