@@ -1,6 +1,6 @@
 {
-	"name": "open-webui",
-	"version": "0.5.20",
+	"name": "insly-ai",
+	"version": "0.5.21",
 	"private": true,
 	"scripts": {
 		"dev": "npm run pyodide:fetch && vite dev --host",

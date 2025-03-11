@@ -14,8 +14,8 @@ services:
       args:
         OLLAMA_BASE_URL: '/ollama'
       dockerfile: Dockerfile
-    image: ghcr.io/open-webui/open-webui:${WEBUI_DOCKER_TAG-main}
-    container_name: open-webui
+    image: 300112170937.dkr.ecr.eu-west-2.amazonaws.com/agily:${WEBUI_DOCKER_TAG-latest}
+    container_name: insly-ai
     volumes:
       - open-webui:/app/backend/data
     depends_on:

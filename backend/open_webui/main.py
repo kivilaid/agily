@@ -1324,10 +1324,10 @@ async def get_manifest_json():
     return {
         "name": app.state.WEBUI_NAME,
         "short_name": app.state.WEBUI_NAME,
-        "description": "Open WebUI is an open, extensible, user-friendly interface for AI that adapts to your workflow.",
+        "description": "Insly AI is an internal corporate AI platform for Insly employees and partners, a specialized unit of Insly Insurance Software.",
         "start_url": "/",
         "display": "standalone",
-        "background_color": "#343541",
+        "background_color": "#ffffff",
         "orientation": "natural",
         "icons": [
             {
