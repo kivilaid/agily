@@ -35,7 +35,18 @@ export default defineConfig({
 		APP_BUILD_HASH: JSON.stringify(process.env.APP_BUILD_HASH || 'dev-build')
 	},
 	build: {
-		sourcemap: true
+		// Disable sourcemaps to reduce memory usage
+		sourcemap: false,
+		// Set chunk size warning limit
+		chunkSizeWarningLimit: 1000,
+		// Optimize build options for memory efficiency
+		rollupOptions: {
+			output: {
+				// Use automatic chunking instead of manual chunks
+				// which were causing external module errors
+				manualChunks: undefined
+			}
+		}
 	},
 	worker: {
 		format: 'es'
