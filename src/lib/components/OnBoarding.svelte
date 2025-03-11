@@ -81,7 +81,7 @@
 						]}
 					/>
 
-					<div class="mt-0.5">{$i18n.t(`wherever you are`)}</div>
+					<div class="mt-0.5">{$i18n.t(`with INSLY`)}</div>
 				</div>
 
 				<div class="flex justify-center mt-8">
