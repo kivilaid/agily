@@ -1,6 +1,6 @@
 {
-  "name": "Insly AI",
-  "short_name": "Insly AI",
+  "name": "Open WebUI",
+  "short_name": "WebUI",
   "icons": [
     {
       "src": "/static/web-app-manifest-192x192.png",
