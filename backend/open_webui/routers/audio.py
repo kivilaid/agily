@@ -126,6 +126,7 @@ class TTSConfigForm(BaseModel):
     OPENAI_API_BASE_URL: str
     OPENAI_API_KEY: str
     API_KEY: str
+    API_URL: str
     ENGINE: str
     MODEL: str
     VOICE: str
@@ -155,6 +156,7 @@ async def get_audio_config(request: Request, user=Depends(get_admin_user)):
             "OPENAI_API_BASE_URL": request.app.state.config.TTS_OPENAI_API_BASE_URL,
             "OPENAI_API_KEY": request.app.state.config.TTS_OPENAI_API_KEY,
             "API_KEY": request.app.state.config.TTS_API_KEY,
+            "API_URL": request.app.state.config.TTS_API_URL,
             "ENGINE": request.app.state.config.TTS_ENGINE,
             "MODEL": request.app.state.config.TTS_MODEL,
             "VOICE": request.app.state.config.TTS_VOICE,
@@ -180,6 +182,7 @@ async def update_audio_config(
     request.app.state.config.TTS_OPENAI_API_BASE_URL = form_data.tts.OPENAI_API_BASE_URL
     request.app.state.config.TTS_OPENAI_API_KEY = form_data.tts.OPENAI_API_KEY
     request.app.state.config.TTS_API_KEY = form_data.tts.API_KEY
+    request.app.state.config.TTS_API_URL = form_data.tts.API_URL
     request.app.state.config.TTS_ENGINE = form_data.tts.ENGINE
     request.app.state.config.TTS_MODEL = form_data.tts.MODEL
     request.app.state.config.TTS_VOICE = form_data.tts.VOICE
@@ -206,6 +209,7 @@ async def update_audio_config(
             "OPENAI_API_BASE_URL": request.app.state.config.TTS_OPENAI_API_BASE_URL,
             "OPENAI_API_KEY": request.app.state.config.TTS_OPENAI_API_KEY,
             "API_KEY": request.app.state.config.TTS_API_KEY,
+            "API_URL": request.app.state.config.TTS_API_URL,
             "ENGINE": request.app.state.config.TTS_ENGINE,
             "MODEL": request.app.state.config.TTS_MODEL,
             "VOICE": request.app.state.config.TTS_VOICE,
@@ -464,6 +468,58 @@ async def speech(request: Request, user=Depends(get_verified_user)):
             await f.write(json.dumps(payload))
 
         return FileResponse(file_path)
+
+    elif request.app.state.config.TTS_ENGINE == "eesti.ai":
+        try:
+            payload = json.loads(body.decode("utf-8"))
+        except Exception as e:
+            log.exception(e)
+            raise HTTPException(status_code=400, detail="Invalid JSON payload")
+
+        # Use default TartuNLP endpoint if not specified
+        api_url = request.app.state.config.TTS_API_URL
+        speaker = request.app.state.config.TTS_VOICE or "mari"  # Default to "mari" if not specified
+        
+        try:
+            timeout = aiohttp.ClientTimeout(total=AIOHTTP_CLIENT_TIMEOUT)
+            async with aiohttp.ClientSession(
+                timeout=timeout, trust_env=True
+            ) as session:
+                async with session.post(
+                    url=api_url,
+                    json={
+                        "text": payload["input"],
+                        "speaker": speaker,
+                        "speed": 1.0  # Default speed
+                    },
+                    headers={"Content-Type": "application/json"},
+                ) as r:
+                    r.raise_for_status()
+
+                    async with aiofiles.open(file_path, "wb") as f:
+                        await f.write(await r.read())
+
+                    async with aiofiles.open(file_body_path, "w") as f:
+                        await f.write(json.dumps(payload))
+
+            return FileResponse(file_path)
+
+        except Exception as e:
+            log.exception(e)
+            detail = None
+
+            try:
+                if r.status != 200:
+                    res = await r.json()
+                    if "error" in res:
+                        detail = f"External: {res['error'].get('message', '')}"
+            except Exception:
+                detail = f"External: {e}"
+
+            raise HTTPException(
+                status_code=getattr(r, "status", 500),
+                detail=detail if detail else "Open WebUI: Server Connection Error",
+            )
 
 
 def transcribe(request: Request, file_path):

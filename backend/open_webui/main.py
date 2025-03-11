@@ -146,6 +146,7 @@ from open_webui.config import (
     AUDIO_STT_OPENAI_API_BASE_URL,
     AUDIO_STT_OPENAI_API_KEY,
     AUDIO_TTS_API_KEY,
+    AUDIO_TTS_API_URL,
     AUDIO_TTS_ENGINE,
     AUDIO_TTS_MODEL,
     AUDIO_TTS_OPENAI_API_BASE_URL,
@@ -737,6 +738,7 @@ app.state.config.TTS_ENGINE = AUDIO_TTS_ENGINE
 app.state.config.TTS_MODEL = AUDIO_TTS_MODEL
 app.state.config.TTS_VOICE = AUDIO_TTS_VOICE
 app.state.config.TTS_API_KEY = AUDIO_TTS_API_KEY
+app.state.config.TTS_API_URL = AUDIO_TTS_API_URL
 app.state.config.TTS_SPLIT_ON = AUDIO_TTS_SPLIT_ON
 
 

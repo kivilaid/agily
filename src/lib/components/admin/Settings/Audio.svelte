@@ -27,6 +27,7 @@
 	let TTS_OPENAI_API_BASE_URL = '';
 	let TTS_OPENAI_API_KEY = '';
 	let TTS_API_KEY = '';
+	let TTS_API_URL = '';
 	let TTS_ENGINE = '';
 	let TTS_MODEL = '';
 	let TTS_VOICE = '';
@@ -95,6 +96,7 @@
 				OPENAI_API_BASE_URL: TTS_OPENAI_API_BASE_URL,
 				OPENAI_API_KEY: TTS_OPENAI_API_KEY,
 				API_KEY: TTS_API_KEY,
+				API_URL: TTS_API_URL,
 				ENGINE: TTS_ENGINE,
 				MODEL: TTS_MODEL,
 				VOICE: TTS_VOICE,
@@ -132,6 +134,7 @@
 			TTS_OPENAI_API_BASE_URL = res.tts.OPENAI_API_BASE_URL;
 			TTS_OPENAI_API_KEY = res.tts.OPENAI_API_KEY;
 			TTS_API_KEY = res.tts.API_KEY;
+			TTS_API_URL = res.tts.API_URL || 'https://api.tartunlp.ai/text-to-speech/v2';
 
 			TTS_ENGINE = res.tts.ENGINE;
 			TTS_MODEL = res.tts.MODEL;
@@ -364,6 +367,7 @@
 							<option value="openai">{$i18n.t('OpenAI')}</option>
 							<option value="elevenlabs">{$i18n.t('ElevenLabs')}</option>
 							<option value="azure">{$i18n.t('Azure AI Speech')}</option>
+							<option value="eesti.ai">eesti.ai</option>
 						</select>
 					</div>
 				</div>
@@ -409,6 +413,42 @@
 							/>
 						</div>
 					</div>
+				{:else if TTS_ENGINE === 'eesti.ai'}
+					<div>
+						<div class="mt-1 flex gap-2 mb-1">
+							<input
+								class="flex-1 w-full rounded-lg py-2 pl-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								placeholder={$i18n.t('API URL')}
+								bind:value={TTS_API_URL}
+								required
+							/>
+						</div>
+					</div>
+
+				<hr class="border-gray-100 dark:border-gray-850 my-2" />
+
+				<div class="w-full">
+					<div class=" mb-1.5 text-sm font-medium">{$i18n.t('TTS Speaker')}</div>
+					<div class="flex w-full">
+						<div class="flex-1">
+							<input
+								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-hidden"
+								bind:value={TTS_VOICE}
+								placeholder="mari"
+							/>
+						</div>
+					</div>
+					<div class="mt-2 mb-1 text-xs text-gray-400 dark:text-gray-500">
+						{$i18n.t('Enter the name of the Estonian TTS voice to use. Default is "mari".')}
+						<a
+							class=" hover:underline dark:text-gray-200 text-gray-800"
+							href="https://www.neurokone.ee"
+							target="_blank"
+						>
+							{$i18n.t('Try different voices on neurokone.ee')}
+						</a>
+					</div>
+				</div>
 				{/if}
 
 				<hr class="border-gray-100 dark:border-gray-850 my-2" />

@@ -2463,3 +2463,21 @@ LDAP_CA_CERT_FILE = PersistentConfig(
 LDAP_CIPHERS = PersistentConfig(
     "LDAP_CIPHERS", "ldap.server.ciphers", os.environ.get("LDAP_CIPHERS", "ALL")
 )
+
+AUDIO_TTS_API_KEY = PersistentConfig(
+    "AUDIO_TTS_API_KEY",
+    "audio.tts.api_key",
+    os.getenv("AUDIO_TTS_API_KEY", ""),
+)
+
+AUDIO_TTS_API_URL = PersistentConfig(
+    "AUDIO_TTS_API_URL",
+    "audio.tts.api_url",
+    os.getenv("AUDIO_TTS_API_URL", "https://api.tartunlp.ai/text-to-speech/v2"),
+)
+
+AUDIO_TTS_ENGINE = PersistentConfig(
+    "AUDIO_TTS_ENGINE",
+    "audio.tts.engine",
+    os.getenv("AUDIO_TTS_ENGINE", ""),
+)
