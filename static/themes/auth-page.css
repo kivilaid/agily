@@ -1,0 +1,158 @@
+/* Custom styling for auth pages */
+
+.auth-page {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/static/assets/images/2.png') no-repeat center center;
+  background-size: cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.auth-form-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.auth-logo {
+  transform: scale(1.5);
+  margin-bottom: 1.5rem;
+  animation: logoEnter 0.8s ease-out;
+}
+
+.auth-title {
+  font-size: 1.75rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.auth-subtitle {
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.auth-input {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.3s ease;
+  color: white !important;
+}
+
+.auth-input:focus {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+.auth-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.auth-label {
+  font-weight: 500 !important;
+  margin-bottom: 0.5rem !important;
+  display: block;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.auth-button {
+  background: linear-gradient(135deg, #1e40af, #3b82f6) !important;
+  border: none !important;
+  padding: 0.75rem !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.auth-button:hover {
+  background: linear-gradient(135deg, #2563eb, #60a5fa) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.auth-divider {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.provider-button {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease;
+}
+
+.provider-button:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-2px);
+}
+
+.auth-text-link {
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.auth-text-link:hover {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logoEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+/* Dark mode adjustments */
+.dark .auth-form-container {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* For smaller screens */
+@media (max-width: 640px) {
+  .auth-form-container {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 1.5rem;
+  }
+}
