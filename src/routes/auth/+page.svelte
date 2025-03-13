@@ -11,6 +11,7 @@
 
 	import { WEBUI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
 	import { WEBUI_NAME, config, user, socket } from '$lib/stores';
+	import { getLanguages, changeLanguage } from '$lib/i18n';
 	
 	// Override the name for Insly AI
 	$: $WEBUI_NAME = "Insly AI";
@@ -23,6 +24,8 @@
 	const i18n = getContext('i18n');
 
 	let loaded = false;
+	let languages = [];
+	let selectedLanguage = '';
 
 	let mode = $config?.features.enable_ldap ? 'ldap' : 'signin';
 
@@ -142,6 +145,11 @@
 		}
 	}
 
+	const handleLanguageChange = (code) => {
+		selectedLanguage = code;
+		changeLanguage(code);
+	};
+
 	onMount(async () => {
 		if ($user !== undefined) {
 			await goto('/');
@@ -150,6 +158,10 @@
 
 		loaded = true;
 		setLogoImage();
+
+		// Get available languages
+		languages = await getLanguages();
+		selectedLanguage = i18next.language || 'en-US';
 
 		if (($config?.features.auth_trusted_header ?? false) || $config?.features.auth === false) {
 			await signInHandler();
@@ -188,6 +200,21 @@
 						alt="Insly AI logo"
 					/>
 				</div>
+			</div>
+		</div>
+
+		<!-- Language selector -->
+		<div class="absolute top-4 right-4 z-50">
+			<div class="language-selector">
+				<select
+					bind:value={selectedLanguage}
+					on:change={() => handleLanguageChange(selectedLanguage)}
+					class="auth-language-select"
+				>
+					{#each languages as language}
+						<option value={language.code}>{language.title}</option>
+					{/each}
+				</select>
 			</div>
 		</div>
 

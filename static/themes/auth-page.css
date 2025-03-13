@@ -16,7 +16,7 @@
 }
 
 .auth-page {
-  background: linear-gradient(135deg, #004c97, #0674ba);
+  background: linear-gradient(135deg, #000000, #212121);
   position: relative;
   overflow: hidden;
   font-family: 'Insly Font', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -38,11 +38,11 @@
 .auth-form-container {
   position: relative;
   z-index: 1;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 76, 151, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   padding: 2rem;
   max-width: 420px;
   width: 100%;
@@ -61,12 +61,12 @@
   font-size: 1.75rem !important;
   font-weight: 700 !important;
   margin-bottom: 0.75rem;
-  color: #004c97 !important;
+  color: white !important;
 }
 
 .auth-subtitle {
   margin-bottom: 1.5rem;
-  color: #666666;
+  color: #cccccc;
   font-size: 0.875rem;
 }
 
@@ -76,13 +76,13 @@
   border-radius: 4px !important;
   padding: 0.75rem 1rem !important;
   transition: all 0.3s ease;
-  color: #333333 !important;
+  color: #000000 !important;
 }
 
 .auth-input:focus {
-  border-color: #0674ba !important;
+  border-color: #FF6B00 !important;
   background-color: #ffffff !important;
-  box-shadow: 0 0 0 2px rgba(6, 116, 186, 0.1);
+  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.1);
 }
 
 .auth-input::placeholder {
@@ -94,57 +94,81 @@
   font-weight: 500 !important;
   margin-bottom: 0.5rem !important;
   display: block;
-  color: #333333 !important;
+  color: white !important;
 }
 
 .auth-button {
   font-family: 'Insly Font', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: #004c97 !important;
+  background: #FF6B00 !important;
+  color: white !important;
   border: none !important;
   padding: 0.75rem !important;
   border-radius: 4px !important;
   font-weight: 600 !important;
   transition: all 0.3s ease !important;
   transform: translateY(0);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .auth-button:hover {
-  background: #0674ba !important;
+  background: #FF8A3D !important;
   transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .auth-divider {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .provider-button {
   font-family: 'Insly Font', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #f5f5f5 !important;
-  border: 1px solid #e0e0e0 !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 4px !important;
-  color: #333333 !important;
+  color: white !important;
   transition: all 0.3s ease;
   font-weight: 500;
   font-size: 0.875rem;
 }
 
 .provider-button:hover {
-  background-color: #e9e9e9 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
   transform: translateY(-2px);
 }
 
 .auth-text-link {
   font-family: 'Insly Font', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #0674ba;
+  color: #FF6B00;
   transition: all 0.3s ease;
   font-weight: 500;
 }
 
 .auth-text-link:hover {
-  color: #004c97;
+  color: #FF8A3D;
   text-decoration: none;
+}
+
+/* Language selector styling */
+.auth-language-select {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-language-select:focus {
+  outline: none;
+  border-color: #FF6B00;
+  box-shadow: 0 0 0 2px rgba(255, 107, 0, 0.1);
+}
+
+.auth-language-select option {
+  background-color: #212121;
+  color: white;
 }
 
 @keyframes fadeIn {
@@ -171,21 +195,25 @@
 
 /* Dark mode adjustments */
 .dark .auth-form-container {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.8);
 }
 
+.dark .auth-title,
 .dark .auth-label,
-.dark .auth-input,
 .dark .provider-button {
-  color: #333333 !important;
+  color: white !important;
+}
+
+.dark .auth-input {
+  color: #000000 !important;
 }
 
 .dark .auth-text-link {
-  color: #0674ba;
+  color: #FF6B00;
 }
 
 .dark .auth-text-link:hover {
-  color: #004c97;
+  color: #FF8A3D;
 }
 
 /* For smaller screens */
@@ -194,5 +222,10 @@
     border-radius: 0;
     box-shadow: none;
     padding: 1.5rem;
+  }
+  
+  .language-selector {
+    top: 1rem;
+    right: 1rem;
   }
 }
