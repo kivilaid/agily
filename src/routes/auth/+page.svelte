@@ -11,6 +11,9 @@
 
 	import { WEBUI_API_BASE_URL, WEBUI_BASE_URL } from '$lib/constants';
 	import { WEBUI_NAME, config, user, socket } from '$lib/stores';
+	
+	// Override the name for Insly AI
+	$: $WEBUI_NAME = "Insly AI";
 
 	import { generateInitialsImage, canvasPixelTest } from '$lib/utils';
 
@@ -180,9 +183,9 @@
 					<img
 						id="logo"
 						crossorigin="anonymous"
-						src="{WEBUI_BASE_URL}/static/splash.png"
-						class="w-6 rounded-full"
-						alt="logo"
+						src="{WEBUI_BASE_URL}/static/favicon.png"
+						class="w-8 h-8"
+						alt="Insly AI logo"
 					/>
 				</div>
 			</div>
