@@ -24,8 +24,9 @@
 	const i18n = getContext('i18n');
 
 	let loaded = false;
-	let languages = [];
-	let selectedLanguage = '';
+	// Default languages as fallback
+	let languages = [{ code: 'en-US', title: 'English (US)' }];
+	let selectedLanguage = 'en-US';
 
 	let mode = $config?.features.enable_ldap ? 'ldap' : 'signin';
 
@@ -145,9 +146,15 @@
 		}
 	}
 
-	const handleLanguageChange = (code) => {
-		selectedLanguage = code;
-		changeLanguage(code);
+	const handleLanguageChange = (event) => {
+		try {
+			const code = event.target.value;
+			console.log('Language changed to:', code);
+			selectedLanguage = code;
+			changeLanguage(code);
+		} catch (e) {
+			console.error('Error changing language:', e);
+		}
 	};
 
 	onMount(async () => {
@@ -159,9 +166,21 @@
 		loaded = true;
 		setLogoImage();
 
-		// Get available languages
-		languages = await getLanguages();
-		selectedLanguage = i18next.language || 'en-US';
+		try {
+			// Get available languages
+			const fetchedLanguages = await getLanguages();
+			if (fetchedLanguages && fetchedLanguages.length > 0) {
+				languages = fetchedLanguages;
+			}
+
+			// Try to get the language from i18n context
+			if ($i18n) {
+				selectedLanguage = $i18n.language || 'en-US';
+			}
+		} catch (e) {
+			console.log('Error loading languages:', e);
+			// Fallback to defaults already set
+		}
 
 		if (($config?.features.auth_trusted_header ?? false) || $config?.features.auth === false) {
 			await signInHandler();
@@ -208,7 +227,7 @@
 			<div class="language-selector">
 				<select
 					bind:value={selectedLanguage}
-					on:change={() => handleLanguageChange(selectedLanguage)}
+					on:change={handleLanguageChange}
 					class="auth-language-select"
 				>
 					{#each languages as language}
@@ -218,10 +237,8 @@
 			</div>
 		</div>
 
-<div
-	class="fixed bg-transparent min-h-screen w-full flex justify-center items-center font-primary z-50 text-white"
->
-			<div class="w-full sm:max-w-md px-10 min-h-screen flex flex-col text-center">
+<div class="auth-center-container font-primary z-50 text-white">
+			<div class="w-full sm:max-w-md px-6 flex flex-col text-center">
 				{#if ($config?.features.auth_trusted_header ?? false) || $config?.features.auth === false}
 					<div class="my-auto pb-10 w-full">
 						<div
@@ -237,7 +254,7 @@
 						</div>
 					</div>
 				{:else}
-					<div class="my-auto pb-10 w-full text-white auth-form-container">
+					<div class="w-full text-white auth-form-container">
 						<form
 							class="flex flex-col justify-center"
 							on:submit={(e) => {
@@ -375,8 +392,8 @@
 						</form>
 
 						{#if Object.keys($config?.oauth?.providers ?? {}).length > 0}
-							<div class="inline-flex items-center justify-center w-full">
-								<hr class="w-32 h-px my-4 border-0 auth-divider" />
+							<div class="inline-flex items-center justify-center w-full mt-5">
+								<hr class="w-32 h-px my-5 border-0 auth-divider" />
 								{#if $config?.features.enable_login_form || $config?.features.enable_ldap}
 									<span
 										class="px-3 text-sm font-medium text-white bg-transparent"
@@ -384,9 +401,9 @@
 									>
 								{/if}
 
-								<hr class="w-32 h-px my-4 border-0 auth-divider" />
+								<hr class="w-32 h-px my-5 border-0 auth-divider" />
 							</div>
-							<div class="flex flex-col space-y-2">
+							<div class="flex flex-col space-y-3 mt-1">
 								{#if $config?.oauth?.providers?.google}
 									<button
 										class="provider-button"
