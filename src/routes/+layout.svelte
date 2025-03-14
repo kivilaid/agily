@@ -570,9 +570,10 @@
 	<link crossorigin="anonymous" rel="icon" href="{WEBUI_BASE_URL}/static/favicon.png" />
 
 	<!-- Theme CSS files -->
-	<link rel="stylesheet" type="text/css" href="/themes/rosepine.css" />
-	<link rel="stylesheet" type="text/css" href="/themes/rosepine-dawn.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="/themes/rosepine.css" /> -->
+	<!-- <link rel="stylesheet" type="text/css" href="/themes/rosepine-dawn.css" /> -->
 	<link rel="stylesheet" type="text/css" href="/themes/insly-light.css" />
+	<link rel="stylesheet" type="text/css" href="/themes/insly-dark.css" />
 </svelte:head>
 
 {#if loaded}

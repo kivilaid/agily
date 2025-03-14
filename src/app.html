@@ -38,7 +38,7 @@
 				const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
 				if (!localStorage?.theme) {
-					localStorage.theme = 'system';
+					localStorage.theme = 'insly-light light';
 				}
 
 				if (localStorage.theme === 'system') {
@@ -58,6 +58,14 @@
 					document.documentElement.classList.add('dark');
 					document.documentElement.classList.add('her');
 					metaThemeColorTag.setAttribute('content', '#983724');
+				} else if (localStorage.theme === 'insly-light light') {
+					document.documentElement.classList.add('light');
+					document.documentElement.classList.add('insly-light');
+					metaThemeColorTag.setAttribute('content', '#ffffff');
+				} else if (localStorage.theme === 'insly-dark dark') {
+					document.documentElement.classList.add('dark');
+					document.documentElement.classList.add('insly-dark');
+					metaThemeColorTag.setAttribute('content', '#121212');
 				} else {
 					document.documentElement.classList.add('dark');
 					metaThemeColorTag.setAttribute('content', '#171717');
