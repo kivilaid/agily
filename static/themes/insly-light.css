@@ -8,11 +8,11 @@
 }
 
 .insly-light #nav {
-	background-color: #F8F8F8;
+	background-color: #F0F0F0;
 }
 
 .insly-light .py-2\.5.my-auto.flex.flex-col.justify-between.h-screen {
-	background: #F2F2F2;
+	background: #E8E8E8;
 }
 
 .insly-light .bg-white.dark\:bg-gray-800 {
@@ -24,10 +24,10 @@
 }
 
 .insly-light #chat-input {
-	background: #F7F7F7;
+	background: #F0F0F0;
 	margin: 0.3rem;
 	padding: 0.5rem;
-	border: 1px solid #E0E0E0;
+	border: 1px solid #CCCCCC;
 }
 
 .insly-light .bg-gradient-to-t.from-white.dark\:from-gray-800.from-40\%.pb-2 {
@@ -37,7 +37,7 @@
 
 .insly-light
 	.text-white.bg-gray-100.dark\:text-gray-800.dark\:bg-gray-600.disabled.transition.rounded-lg.p-1.mr-0\.5.w-7.h-7.self-center {
-	background-color: #E0E0E0;
+	background-color: #CCCCCC;
 	transition: background-color 0.2s ease-out linear;
 }
 
@@ -56,17 +56,17 @@
 
 .insly-light
 	.w-full.flex.justify-between.rounded-md.px-3.py-2.hover\:bg-gray-900.bg-gray-900.transition.whitespace-nowrap.text-ellipsis {
-	background-color: #ECECEC;
+	background-color: #DADADA;
 	font-weight: bold;
 }
 
 .insly-light .hover\:bg-gray-900:hover {
 	--tw-bg-opacity: 1;
-	background-color: rgb(240 240 240 / var(--tw-bg-opacity));
+	background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
 
 .insly-light .text-xs.text-gray-700.uppercase.bg-gray-50.dark\:bg-gray-700.dark\:text-gray-400 {
-	background-color: #F5F5F5;
+	background-color: #EBEBEB;
 }
 
 .insly-light .scrollbar-hidden.relative.overflow-x-auto.whitespace-nowrap.svelte-3g4avz {
@@ -74,7 +74,7 @@
 }
 
 .insly-light .base.enter.svelte-ug60r4 {
-	background-color: #F7F7F7;
+	background-color: #F0F0F0;
 }
 
 .insly-light .message.svelte-1nauejd {
@@ -82,11 +82,11 @@
 }
 
 .insly-light #dropdownDots {
-	background-color: #F5F5F5;
+	background-color: #EBEBEB;
 }
 
 .insly-light .flex.py-2\.5.px-3\.5.w-full.hover\:bg-gray-800.transition:hover {
-	background: #F0F0F0;
+	background: #E5E5E5;
 }
 
 .insly-light .m-auto.rounded-xl.max-w-full.w-\[40rem\].mx-2.bg-gray-50.dark\:bg-gray-900.shadow-3xl {
@@ -96,24 +96,24 @@
 
 .insly-light
 	.w-full.rounded.p-4.text-sm.dark\:text-gray-300.dark\:bg-gray-800.outline-none.resize-none {
-	background-color: #F8F8F8;
-	border: 1px solid #E0E0E0;
+	background-color: #F0F0F0;
+	border: 1px solid #CCCCCC;
 }
 
 .insly-light
 	.w-full.rounded.py-2.px-4.text-sm.dark\:text-gray-300.dark\:bg-gray-800.outline-none.svelte-1vx7r9s {
-	background-color: #F8F8F8;
-	border: 1px solid #E0E0E0;
+	background-color: #F0F0F0;
+	border: 1px solid #CCCCCC;
 }
 
 .insly-light
 	.px-2\.5.py-2\.5.min-w-fit.rounded-lg.flex-1.md\:flex-none.flex.text-right.transition.bg-gray-200.dark\:bg-gray-700 {
-	background-color: #F0F0F0;
+	background-color: #E5E5E5;
 }
 
 .insly-light
 	.px-2\.5.py-2\.5.min-w-fit.rounded-lg.flex-1.md\:flex-none.flex.text-right.transition.hover\:bg-gray-300.dark\:hover\:bg-gray-800:hover {
-	background-color: #E5E5E5;
+	background-color: #D9D9D9;
 }
 
 .insly-light .px-4.py-2.bg-emerald-600.hover\:bg-emerald-700.text-gray-100.transition.rounded {
@@ -121,12 +121,12 @@
 }
 
 .insly-light #chat-search > * {
-	background-color: #F5F5F5 !important;
+	background-color: #EBEBEB !important;
 }
 
 .insly-light .svelte-1ee93ns {
 	--primary: #FF7A59 !important;
-	--secondary: #F8F8F8 !important;
+	--secondary: #F0F0F0 !important;
 }
 
 .insly-light .svelte-11kvm4p {
@@ -141,21 +141,21 @@
 }
 
 .insly-light table th {
-	background-color: #F5F5F5;
+	background-color: #EBEBEB;
 	color: #444444 !important;
 	font-weight: 600;
 	padding: 10px;
 	text-align: left;
-	border-bottom: 1px solid #E0E0E0;
+	border-bottom: 1px solid #CCCCCC;
 }
 
 .insly-light table td {
 	padding: 10px;
-	border-bottom: 1px solid #E0E0E0;
+	border-bottom: 1px solid #CCCCCC;
 }
 
 .insly-light table tr:hover {
-	background-color: #F8F8F8;
+	background-color: #F0F0F0;
 }
 
 /* Button styling to match INSLY interface */
@@ -168,9 +168,9 @@
 }
 
 .insly-light button.secondary {
-	background-color: #F0F0F0;
+	background-color: #E5E5E5;
 	color: #444444 !important;
-	border: 1px solid #E0E0E0;
+	border: 1px solid #CCCCCC;
 	border-radius: 4px;
 	padding: 6px 12px;
 }
@@ -186,7 +186,7 @@
 
 /* Status indicators like in INSLY */
 .insly-light .status-created {
-	background-color: #F0F0F0;
+	background-color: #E5E5E5;
 	color: #444444 !important;
 	border-radius: 20px;
 	padding: 4px 10px;
