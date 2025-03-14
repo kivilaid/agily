@@ -46,7 +46,7 @@
   padding: 2rem;
   max-width: 420px;
   width: 100%;
-  margin: 0 auto;
+  margin: auto; /* Changed from 0 auto to auto for vertical centering */
   animation: fadeIn 0.6s ease-out;
 }
 
